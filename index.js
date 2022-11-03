@@ -148,7 +148,8 @@ function findById(movies, id) {
  *  //> []
  */
 function filterByGenre(movies, genre) {
-  let moviesByGenre = [];
+  let moviesByGenre = [];//should return an empty array if the inputted 'movies' array is empty or no movies match the inputted ;
+  // loop into the movies array and return an array of genres matches (all character to lowercase)
   for(let movie of movies){
     if(movie.genre.toLowerCase().includes(genre.toLowerCase())){
       moviesByGenre.push(movie)
@@ -179,7 +180,13 @@ function filterByGenre(movies, genre) {
       }
     ];
  */
-function getAllMoviesReleasedAtOrBeforeYear() {}
+function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
+  return movies.filter(movie=>{
+    let releasedAtOrBefore = movie.released.split(" ")
+    return releasedAtOrBefore[2]<= year
+  })
+  
+}
 
 /**
  * getBiggestBoxOfficeMovie()
