@@ -49,7 +49,18 @@ function getAllMovieTitles(movies) {
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore() {}
+function getHighestMetascore(movies) {
+  // initialize the accumulator
+  let highestMetascore = 0 ;
+  // loop into the movies array and find the highestMetascore as a number 
+  for(let movie of movies){
+    let metascore = Number(movie.metascore);
+    if(metascore > highestMetascore){
+      highestMetascore = metascore
+    }
+  }
+  return highestMetascore;
+}
 
 /**
  * getAverageIMDBRating()
